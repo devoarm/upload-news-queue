@@ -25,7 +25,7 @@ WORKDIR /app
 
 COPY --from=builder /app  .
 
-ENV HOST 0.0.0.0
-EXPOSE 78
+ENV HOST 192.168.3.30
+EXPOSE 8383
 
 CMD [ "yarn", "start" ]

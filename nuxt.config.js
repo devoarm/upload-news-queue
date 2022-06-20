@@ -1,5 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
-
+require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -39,6 +39,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-sweetalert2'
+
   ],  
 
 
@@ -66,7 +68,15 @@ export default {
       },
     },
   },
+  server: {
+    host: '0.0.0.0',
+    port: process.env.port // default: localhost
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  target: 'static',
+  mode: 'spa'
+
+
 }
